@@ -29,7 +29,7 @@ class EasterVariation2 {
         int d = 3 * (a + 25) %4; //remainder of 3 * (a + 25) divided by 4
         int q = 8 * (a + 11) /25 % 25; //quotient of 8*(a+11) divided by 25
         int f = (5*a+b) %19; // remainder of 5a+b divided by 19
-        int g = (19f + c -q) % 30; //remainder of 19f + c -q divided by 30
+        int g = (19*f + c -q) % 30; //remainder of 19f + c -q divided by 30
         int h = (f+11*g)/319; //quotient of f + 11g divided by 319
         int j = (60 * (5 - d) + b) / 4; //quotient of 60 * (5 - d) + b divided by 4
         int k = (60 * (5 - d) + b) %4; //remainder of 60 * (5 - d) + b divided by 4
