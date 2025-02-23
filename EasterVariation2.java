@@ -14,12 +14,12 @@ import java.util.Scanner;  // Import the Scanner class
 
 
 class EasterVariation2 {
-    public static void EasterVariation2(String[] args) {
+    public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Easter month and day finder");
         System.out.println("---------------------------------");
         System.out.println("Enter the year: ");
-        int year = myObj.nextLine();  
+        int year = myObj.nextInt();  
         int a = floor(year/100); //quotient of year/100
         int b = year%b; //remainder of year/100
         int c = floor(3*(a+25) / 4); // quoteint of 3 * (a + 25) divided by 4
@@ -37,3 +37,4 @@ class EasterVariation2 {
         System.out.println("Easter during the year " + year + " is on the " + day + " day of the " + month + " month.");
 
     }
+}
