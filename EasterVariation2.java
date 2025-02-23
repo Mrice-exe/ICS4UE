@@ -24,7 +24,7 @@ class EasterVariation2 {
         System.out.println("Enter the year: ");
         int year = myObj.nextInt();  
         int a = year/100; //quotient of year/100
-        int b = year%b; //remainder of year/100
+        int b = year%100; //remainder of year/100
         int c = 3*(a+25) / 4; // quoteint of 3 * (a + 25) divided by 4
         int d = 3 * (a + 25) %4; //remainder of 3 * (a + 25) divided by 4
         int q = 8 * (a + 11) /25 % 25; //quotient of 8*(a+11) divided by 25
