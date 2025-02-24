@@ -18,19 +18,19 @@ class Palindrome {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Please enter a word: ");
-        String word = myObj.nextInt();  
+        String word = myObj.nextLine();  
         word = word.toLowerCase();// make the word letters all lowercase
-        String resversed;
+        String reversed = "";
         //iterate through each letter starting from the end of the word and create the reversed word
         for (int i = word.length() - 1; i >= 0; i--) {
             reversed += word.charAt(i);
         }
-        System.out.println(word + " in reverse is "+reversed)
+        System.out.println(word + " in reverse is "+reversed);
         if (word.equals(reversed)) { //if the reversed is the same as the word
             System.out.println("The word is a palindrome."); //then it is a palindrome
         } 
         else { //if they're not the same
             System.out.println("The word is NOT a palindrome."); //it is not a palindrome
-
+        }
     }
 }
