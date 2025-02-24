@@ -35,10 +35,9 @@ class Palindrome2 {
               palindromeCount += 1; //add one to the counter
               pali += word + " "; //add the palidrome into the palidrome word storage
             } 
-
+        }
         System.out.println("There are "+palindromeCount+" palidromes in the sentence");
         System.out.println("The palindromes are: "+pali);
 
-        }
     }
 }
