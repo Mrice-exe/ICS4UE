@@ -22,24 +22,20 @@ class Palindrome3 {
         String sentence = myObj.nextLine();  
         sentence = sentence.toLowerCase();// make the word letters all lowercase
 
-        int palindromeCount = 0; // Counter for palindrome words
-        String pali = ""; //will hold all of the palindrome words
 
-        String[] words = sentence.split("\\s+"); // Split sentence into words (by spaces)
-        //iterate through every word in the sentence
-        for (String word : words) {
-            String reversed = ""; // Initialize reversed string for each word
-            //iterate through each letter starting from the end of the word and create the reversed word
-            for (int i = word.length() - 1; i >= 0; i--) {
-              reversed += word.charAt(i);
+        String phrase = sentence.replace(" ",""); //remove all of the spaces
+
+        String reversed = ""; // Initialize reversed string for each word
+        //iterate through each letter starting from the end of the phrase and create the reversed phrase
+            for (int i = phrase.length() - 1; i >= 0; i--) {
+              reversed += phrase.charAt(i);
             }
-            if (word.equals(reversed)) { //if the reversed is the same as the word
-              palindromeCount += 1; //add one to the counter
-              pali += word + " "; //add the palidrome into the palidrome word storage
+            if (phrase.equals(reversed)) { //if the reversed is the same as the word
+                System.out.println(phrase+" IS a palindrome.");
             } 
-        }
-        System.out.println("There are "+palindromeCount+" palidromes in the sentence");
-        System.out.println("The palindromes are: "+pali);
+            else{
+                System.out.println(phrase+" is NOT a palindrome.");
+            }
 
     }
 }
