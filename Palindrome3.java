@@ -8,9 +8,8 @@ Palindrome3
 
 Variable dictionary:
     sentence - stores the String input of user
+    phrase - is the sentence without the spaces
     reversed - is the reversed String of the word
-    palindromeCount - an int that holds the total amount of palindromes
-    pali - a string that contains all of the palidromes
 */
 import java.util.Scanner;  // Import the Scanner class
 
@@ -31,10 +30,11 @@ class Palindrome3 {
               reversed += phrase.charAt(i);
             }
             if (phrase.equals(reversed)) { //if the reversed is the same as the word
-                System.out.println(phrase+" IS a palindrome.");
+                System.out.println(sentence+" IS a palindrome.");
+                
             } 
             else{
-                System.out.println(phrase+" is NOT a palindrome.");
+                System.out.println(sentence+" is NOT a palindrome.");
             }
 
     }
