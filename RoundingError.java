@@ -7,7 +7,10 @@ Activity 1: Numeric Data Types
 RoundingError
 
 Variable dictionary:
-    month - stores the month as int
+    num - stores the int input of user
+    squaroot - the calculated square root of the number
+    square - the square of the square root
+    error - the round off error
 
 */
 import java.util.Scanner;  // Import the Scanner class
