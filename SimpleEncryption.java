@@ -20,23 +20,23 @@ class SimpleEncryption {
         System.out.println("Please enter a phrase: ");
         String phrase = myObj.nextLine();  
         System.out.println("Please enter the rotation amount (1-25): ");
-        Int rotation = myObj.nextInt();  
+        int rotation = myObj.nextInt();  
         System.out.println("(1)Encryption  (2)Decryption   Pick one: ");
-        Int enOrDe = myObj.nextInt();  
+        int enOrDe = myObj.nextInt();  
         phrase = phrase.toUpperCase();// make the word letters all uppercase
 
         String encrypted = "";
-        if (enOrDe == 1 { //if the user chose encryption
+        String decrypted = "";
+        if (enOrDe == 1) { //if the user chose encryption
             for (int i = 0; i < phrase.length(); i++) {
                 char current = phrase.charAt(i);
-                if (Character.isLetter(currentChar)) {
-                    char base = 'A'
+                if (Character.isLetter(current)) {
+                    char base = 'A';
                     // Shift the letter by the rotation amount
                     char newChar = (char) ((current - base + rotation) % 26 + base);
                     encrypted += newChar;
-                } 
-                else {
-                    encrypted += current // Keep spaces and non-letters unchanged
+                } else {
+                    encrypted += current; // Keep spaces and non-letters unchanged
                 }
             }
             System.out.println("The original phrase is: " + phrase);
@@ -44,7 +44,20 @@ class SimpleEncryption {
 
         } 
         else{ //if the user chose decryption
-            System.out.println(sentence+" is NOT a palindrome.");
+            for (int i = 0; i < phrase.length(); i++) {
+                char current = phrase.charAt(i);
+                if (Character.isLetter(current)) {
+                    char base = 'A';
+                    // Shift the letter by the rotation amount
+                    char newChar = (char) ((current - base - rotation+26) % 26 + base);
+                    decrypted += newChar;
+                } 
+                else {
+                    decrypted += current; // Keep spaces and non-letters unchanged
+                }
+            }
+            System.out.println("The original phrase is: " + phrase);
+            System.out.println("The decrypted phrase is: " + decrypted);
         }
 
     }
