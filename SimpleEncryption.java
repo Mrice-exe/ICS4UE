@@ -7,9 +7,15 @@ Activity 1: String Data Types
 SimpleEncryption
 
 Variable dictionary:
-    sentence - stores the String input of user
-    phrase - is the sentence without the spaces
-    reversed - is the reversed String of the word
+    phrase - stores the String input of user
+    rotation - stores the int desired rotation
+    enOrDie - stores the int value of 1 or 2 from the user input deciding encryption or decryption
+    encrypted - the string that holds the encrypted phrase
+    decrypted - the string that holds the decrypted phrase
+    current - the current character the for loop is on
+    base - the uppercase A which has a specified ascii value
+    newchar - is the new character after the rotation calculated from a formula
+    
 */
 import java.util.Scanner;  // Import the Scanner class
 
@@ -28,7 +34,7 @@ class SimpleEncryption {
         String encrypted = "";
         String decrypted = "";
         if (enOrDe == 1) { //if the user chose encryption
-            for (int i = 0; i < phrase.length(); i++) {
+            for (int i = 0; i < phrase.length(); i++) { //iterate through all characters
                 char current = phrase.charAt(i);
                 if (Character.isLetter(current)) {
                     char base = 'A';
@@ -44,7 +50,7 @@ class SimpleEncryption {
 
         } 
         else{ //if the user chose decryption
-            for (int i = 0; i < phrase.length(); i++) {
+            for (int i = 0; i < phrase.length(); i++) { //iterate through all characters
                 char current = phrase.charAt(i);
                 if (Character.isLetter(current)) {
                     char base = 'A';
