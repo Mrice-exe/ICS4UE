@@ -8,6 +8,7 @@ EasterVariation2
 
 Variable dictionary:
     month - stores the month as int
+    monthStr - stores the string of the month, either march or april
     day - stores the day as int
     a, b, c, d, e, f, g, h, i, j, k, m, p - int variables used for calculations
 */
@@ -16,6 +17,7 @@ import java.util.Scanner;  // Import the Scanner class
 
 class EasterVariation2 {
     public static void main(String[] args) {
+        String monthStr;
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Easter month and day finder");
         System.out.println("---------------------------------");
@@ -42,7 +44,7 @@ class EasterVariation2 {
      	} else {
             monthStr = "April";
      	}
-        System.out.println("Easter during the year " + year + " is on the " + day + " day of the " + month + " month.");
+        System.out.println("Easter during the year " + year + " is on the " + day + " day of " + monthStr);
 
     }
 }
