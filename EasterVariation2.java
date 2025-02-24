@@ -7,8 +7,9 @@ Activity 1: Numeric Data Types
 EasterVariation2
 
 Variable dictionary:
-    t - turtle.turtle(), makes for coding lines and using the turtle object functions a lot
-        easier.
+    month - stores the month as int
+    day - stores the day as int
+    a, b, c, d, e, f, g, h, i, j, k, m, p - int variables used for calculations
 */
 import java.util.Scanner;  // Import the Scanner class
 
@@ -34,6 +35,13 @@ class EasterVariation2 {
         int month = (g - h + n + 114)/31; // the month is the quotient of g - h + n + 114 divided by 31
         int p = (g - h + n + 114) % 31; //remainder of g - h + n + 114 divided by 31
         int day = p+1; //the day is p+1
+        
+        //determine the month in String format
+    	if(month == 3){
+            monthStr = "March";
+     	} else {
+            monthStr = "April";
+     	}
         System.out.println("Easter during the year " + year + " is on the " + day + " day of the " + month + " month.");
 
     }
