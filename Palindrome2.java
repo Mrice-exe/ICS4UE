@@ -9,7 +9,8 @@ Palindrome2
 Variable dictionary:
     sentence - stores the String input of user
     reversed - is the reversed String of the word
-
+    palindromeCount - an int that holds the total amount of palindromes
+    pali - a string that contains all of the palidromes
 */
 import java.util.Scanner;  // Import the Scanner class
 
@@ -22,12 +23,13 @@ class Palindrome2 {
         sentence = sentence.toLowerCase();// make the word letters all lowercase
 
         int palindromeCount = 0; // Counter for palindrome words
-        String pali = "";
+        String pali = ""; //will hold all of the palindrome words
 
         String[] words = sentence.split("\\s+"); // Split sentence into words (by spaces)
-        //iterate through each letter starting from the end of the word and create the reversed word
+        //iterate through every word in the sentence
         for (String word : words) {
             String reversed = ""; // Initialize reversed string for each word
+            //iterate through each letter starting from the end of the word and create the reversed word
             for (int i = word.length() - 1; i >= 0; i--) {
               reversed += word.charAt(i);
             }
