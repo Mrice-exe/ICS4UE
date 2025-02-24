@@ -1,4 +1,4 @@
-"""
+/*
 Sean S
 02/23/2025
 ICS4UE 
@@ -9,10 +9,7 @@ EasterVariation2
 Variable dictionary:
     t - turtle.turtle(), makes for coding lines and using the turtle object functions a lot
         easier.
-"""
-import java.util.Scanner;  // Import the Scanner class
-
-
+*/
 import java.util.Scanner;  // Import the Scanner class
 
 
