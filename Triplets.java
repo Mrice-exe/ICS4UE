@@ -17,13 +17,11 @@ Variable dictionary:
     newchar - is the new character after the rotation calculated from a formula
     
 */
-import java.util.Scanner;  // Import the Scanner class
-
+import java.util.ArrayList;  // Import the ArrayList class
 
 class Triplets {
     public static void main(String[] args) {
-        public static void main(String [] args) {
-    //This program will use a dynamic arrays
+        //This program will use a dynamic arrays
     ArrayList<String> nouns = new ArrayList<String>();
     nouns.add("cat");
     nouns.add("dog");
@@ -54,8 +52,8 @@ class Triplets {
     rhymingNouns.add("treehouse");
 
     String noun;
-    String verb1, verb2;
-    String rhymingNoun1, rhymingNoun2;
+    String verb1, verb2, verb3;
+    String rhymingNoun1, rhymingNoun2, rhymingNoun3;
     int randomNum;
 
     //get a random noun from the nouns array
@@ -73,6 +71,11 @@ class Triplets {
     randomNum = (int) (Math.random() * verbs.size());
     verb2 = verbs.get(randomNum);
     verbs.remove(randomNum);
+    
+    //get the third random verb from verbs array and remove it
+    randomNum = (int) (Math.random() * verbs.size());
+    verb3 = verbs.get(randomNum);
+    verbs.remove(randomNum);
 
     //get the first rhyming noun and remove it
     randomNum = (int) (Math.random() * rhymingNouns.size());
@@ -83,12 +86,15 @@ class Triplets {
     randomNum = (int) (Math.random() * rhymingNouns.size());
     rhymingNoun2 = rhymingNouns.get(randomNum);
     rhymingNouns.remove(randomNum);
-
+    
+    //get the third rhyming noun and remove it
+    randomNum = (int) (Math.random() * rhymingNouns.size());
+    rhymingNoun3 = rhymingNouns.get(randomNum);
+    rhymingNouns.remove(randomNum);
     //Display the poem
     System.out.println("The " + noun + " " + verb1 + " a " + 
       rhymingNoun1 + "\n" + "And then " + verb2 + 
-      " it in the " + rhymingNoun2);
-        }
-
-    }
+      " in the " + rhymingNoun2 + "\n" + "But it " + verb3 + 
+      " a " + rhymingNoun3);
+  }
 }
