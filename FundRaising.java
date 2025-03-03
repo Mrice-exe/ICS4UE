@@ -7,17 +7,22 @@ Activity 2: One-Dimensional Arrays
 FundRaising
 
 Variable dictionary:
-    schoolNames - a two-dimensional Array that holds the names of the schools 
-    donationAmounts - an Array that holds the possible donation amounts corresponding to different donation scenarios
-    fundraising - a two-dimensional Array that stores the calculated estimated donations for each school and each donation amount
-    totalDonationsBySchool - an Array that holds the total estimated donations for each school across all donation scenarios
-    totalDonationsByAmount - an Array that holds the total estimated donations for each donation amount across all schools
-    students - an integer that stores the number of students at the selected school
-    donationChoice - an integer that stores the selected donation amount scenario 
-    schoolChoice - an integer that stores the selected school number 
+    schools - a one-dimensional array that holds the names of the 8 schools
+    donationAmounts - a one-dimensional array that holds the possible donation amounts
+    fundraising - a two-dimensional array (8 x 4) that stores the calculated estimated donations for each school and each donation amount
+    continueInput - a boolean variable that controls whether the user can continue entering data or not
+    donationChoice - an integer that stores the user's selected donation amount scenario 
+    schoolChoice - an integer that stores the user's selected school number 
+    numStudents - an integer that stores the number of students at the selected school
+    fundraisingAmount - a double that stores the estimated donation amount for the selected school and donation scenario
+    continueChoice - a string that stores the user's input to decide whether to continue entering data or not 
+    totalDonation - a double that stores the total donations accumulated across all schools and donation scenarios
+    schoolTotal - a double that stores the total donations for a specific school across all donation scenarios
     
 */
 import java.util.ArrayList;  // Import the ArrayList class
+
+import java.util.Scanner;  // Import the Scanner class
 
 class FundRaising {
     public static void main(String[] args) {
@@ -37,7 +42,10 @@ class FundRaising {
         // Scanner for user input
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        // Variable for continuing or breaking the loop
+        boolean continueInput = true;
+
+        while (continueInput) {
             // Show donation choices
             System.out.println("Choose a donation amount:");
             System.out.println("1. 0.25 (25 cents)");
@@ -47,6 +55,9 @@ class FundRaising {
             System.out.print("Enter your choice (1-4): ");
             int donationChoice = scanner.nextInt() - 1;
 
+            // Clear the input buffer after reading the integer
+            scanner.nextLine(); // This handles the leftover newline character
+
             // Show school choices
             System.out.println("Choose a school:");
             for (int i = 0; i < schools.length; i++) {
@@ -55,14 +66,27 @@ class FundRaising {
             System.out.print("Enter your choice (1-8): ");
             int schoolChoice = scanner.nextInt() - 1;
 
+            // Clear the input buffer after reading the integer
+            scanner.nextLine(); // This handles the leftover newline character
+
             // Input number of students
             System.out.print("Enter the number of students at " + schools[schoolChoice] + ": ");
             int numStudents = scanner.nextInt();
 
             // Calculate the fundraising amount and store it in the array
             double fundraisingAmount = numStudents * donationAmounts[donationChoice];
-            fundraising[schoolChoice][donationChoice] = fundraisingAmount;
+            fundraising[schoolChoice][donationChoice] += fundraisingAmount; // Accumulate the amount
 
+            // Clear the input buffer after reading the integer
+            scanner.nextLine(); // This handles the leftover newline character
+
+            // Ask user if they want to continue entering data
+            System.out.print("Do you want to enter another record? (yes/no): ");
+            String continueChoice = scanner.nextLine().toLowerCase();  // Use nextLine() here
+            if (!continueChoice.equals("yes")) {
+                continueInput = false;
+            }
+        }
 
         // Output the results in a tabular format
         System.out.println("\nFundraising Estimates:");
