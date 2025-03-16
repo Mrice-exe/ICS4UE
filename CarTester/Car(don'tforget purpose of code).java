@@ -22,65 +22,40 @@ public class Car {
     //declare variables
     private String make, model, colour;
     private int year, price, horsepower;
-    //consturctors
+    //default constructor
     public Car(){
         make = "Toyota";
         model = "Rav4";
         colour = "Black";
-        year = 0;
-        price = 0;
-        horsepower = 0 ;
+        year = 2020;
+        price = 40000;
+        horsepower = 200 ;
     }
+    //assigning variables constructor
     public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
-        make2 = imake
-        model2 = imodel
-        colour2 = icolour
-        year2 = iyear
-        price2 = iprice
-        horsepower2 = ihorsepower
-
+        make = imake
+        model = imodel
+        colour = icolour
+        year = iyear
+        price = iprice
+        horsepower = ihorsepower
     }
-    //2nd constructor
-    public Car(){
-        make = "Toyota";
-        model = "Rav4";
-        colour = "Black";
-        year = 0;
-        price = 0;
-        horsepower = 0 ;
-    }
-    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
-        make2 = imake
-        model2 = imodel
-        colour2 = icolour
-        year2 = iyear
-        price2 = iprice
-        horsepower2 = ihorsepower
-
-    }
-    //3rd constructor
-    public Car(){
-        make = "Toyota";
-        model = "Rav4";
-        colour = "Black";
-        year = 0;
-        price = 0;
-        horsepower = 0 ;
-    }
-    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
-        make3 = imake
-        model3 = imodel
-        colour3 = icolour
-        year3 = iyear
-        price3 = iprice
-        horsepower3 = ihorsepower
-
+    //Alternate constructor that only uses the make, model, and colour
+    public Car(String imake, String imodel, String icolour){
+        make = imake
+        model = imodel
+        colour = icolour
+        //set year, price, and horsepower to random numbers within a reasonable range
+        year = int (Math.random(1980,2025)
+        price = int (Math.random(30000,80000)
+        horsepower = int (math.random(150,270)
+        
     }
     public void honk(){
         System.out.println("HONK!")
     }
     public String toString(){
-        String output = "First Car" + "\n";
+        String output = "Car details" + "\n";
         output += "Make: " + make + "\n";
         output += "Model: " + model + "\n";
         output += "Colour: " + colour + "\n";
