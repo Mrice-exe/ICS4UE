@@ -2,7 +2,6 @@
 Sean S
 03/16/2025
 ICS4UE 
-Unit 2: Arrays
 Unit 3: Modular Programming
 Activity 1: Creating Modules
 CarTester
