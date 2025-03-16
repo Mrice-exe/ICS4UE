@@ -1,10 +1,10 @@
 /*
 Sean S
-03/02/2025
+03/16/2025
 ICS4UE 
-Unit 2: Arrays
-Activity 2: One-Dimensional Arrays
-Triplets
+Unit 3: Modular Programming
+Activity 1: Creating Modules
+CarTester
 
 
 Variable dictionary:
