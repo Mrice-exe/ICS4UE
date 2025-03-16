@@ -54,6 +54,7 @@ class CarTester {
     System.out.println("--------------------------");
 
     //the car honks
+    System.out.println("Your dream car honks");
     car1.honk();
   }
 }
