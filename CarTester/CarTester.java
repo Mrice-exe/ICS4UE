@@ -3,16 +3,24 @@ Sean S
 03/15/2025
 ICS4UE 
 Unit 2: Arrays
-Activity 2: One-Dimensional Arrays
+Unit 3: Modular Programming
+Activity 1: Creating Modules
 CarTester
 
+The purpose of this code is to create three different cars, each using a different constructor, 
+properties specified by the user.
+
 Variable dictionary:
-    nouns - stores the noun Strings into an array
-    verbs - stores the verbs strings into an array
-    rhymingNouns - stores the nouns that rhyme into an array
-    verb1, verb2, verb3 - the first, second, and third randomly chosen verbs for the poem
-    rhymingNoun1, rhymingNoun2, rhymingNoun3 - the first, second, and third randomly chosen rhyming nouns for the poem
-    randomNum - a random integer used for randomly picking nouns or verbs
+    make: String variable that stores the make of the car.
+    model: String variable that stores the model of the car.
+    colour: String variable that stores the color of the car.
+    year: Integer variable that stores the manufacturing year of the car.
+    price: Integer variable that stores the price of the car.
+    horsepower: Integer variable that stores the horsepower of the car.
+    myObj: Scanner object used to capture user input.
+    car1: Object of the Car class created using the default constructor.
+    car2: Object of the Car class created using the constructor that takes all six properties.
+    car3: Object of the Car class created using the constructor that takes only the make, model, and colour properties.
     
 */
 package CarTester;
@@ -22,6 +30,8 @@ import java.util.Scanner;  // Import the Scanner class
 class CarTester {
     public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+
+    // Ask the user for car properties and store the responses
     System.out.println("Let's create your dream car");
     System.out.println("What is your desired make?");
     String make = myObj.nextLine();
@@ -36,9 +46,9 @@ class CarTester {
     System.out.println("What is your desired horsepower?");
     int horsepower = myObj.nextInt();
     
-    car car1 = new car();
-    car car2 = new car(make, model, colour, year, price, horsepower);
-    car car3 = new car(make, model, colour);
+    car car1 = new car(); //default car constructor
+    car car2 = new car(make, model, colour, year, price, horsepower); // Constructor with all properties
+    car car3 = new car(make, model, colour); // Constructor with make, model, and colour only
 
     //Print the details of each car
     System.out.println("Here is the default car:");
