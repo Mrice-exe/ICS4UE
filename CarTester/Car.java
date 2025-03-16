@@ -52,7 +52,7 @@ public class Car {
         
     }
     public void honk(){
-        System.out.println("HONK!")
+        System.out.println("HONK!");
     }
     public String toString(){
         String output = "Car details" + "\n";
