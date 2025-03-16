@@ -64,5 +64,4 @@ public class car {
         output += "Horsepower: " + horsepower + "\n";
         return output;
     }
-  }
 }
