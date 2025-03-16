@@ -33,22 +33,22 @@ public class Car {
     }
     //assigning variables constructor
     public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
-        make = imake
-        model = imodel
-        colour = icolour
-        year = iyear
-        price = iprice
-        horsepower = ihorsepower
+        make = imake;
+        model = imodel;
+        colour = icolour;
+        year = iyear;
+        price = iprice;
+        horsepower = ihorsepower;
     }
     //Alternate constructor that only uses the make, model, and colour
     public Car(String imake, String imodel, String icolour){
-        make = imake
-        model = imodel
-        colour = icolour
+        make = imake;
+        model = imodel;
+        colour = icolour;
         //set year, price, and horsepower to random numbers within a reasonable range
-        year = (int) (Math.random() *(2025-1980+1)+1980;
-        price = (int) (Math.random() *(80000-30000+1)+30000;
-        horsepower = (int) (Math.random() *(270-150+1)+150;
+        year = (int) (Math.random() *(2025-1980+1))+1980;
+        price = (int) (Math.random() *(80000-30000+1))+30000;
+        horsepower = (int) (Math.random() *(270-150+1))+150;
         
     }
     public void honk(){
