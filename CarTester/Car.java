@@ -18,12 +18,12 @@ Variable dictionary:
 */
 package CarTester;
 
-public class Car {
+public class car {
     //declare variables
     private String make, model, colour;
     private int year, price, horsepower;
     //default constructor
-    public Car(){
+    public car(){
         make = "Toyota";
         model = "Rav4";
         colour = "Black";
@@ -32,7 +32,7 @@ public class Car {
         horsepower = 200 ;
     }
     //assigning variables constructor
-    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
+    public car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
         make = imake;
         model = imodel;
         colour = icolour;
@@ -41,7 +41,7 @@ public class Car {
         horsepower = ihorsepower;
     }
     //Alternate constructor that only uses the make, model, and colour
-    public Car(String imake, String imodel, String icolour){
+    public car(String imake, String imodel, String icolour){
         make = imake;
         model = imodel;
         colour = icolour;
