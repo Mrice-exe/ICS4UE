@@ -46,9 +46,9 @@ public class Car {
         model = imodel
         colour = icolour
         //set year, price, and horsepower to random numbers within a reasonable range
-        year = int (Math.random(1980,2025)
-        price = int (Math.random(30000,80000)
-        horsepower = int (math.random(150,270)
+        year = (int) (Math.random() *(2025-1980+1)+1980;
+        price = (int) (Math.random() *(80000-30000+1)+30000;
+        horsepower = (int) (Math.random() *(270-150+1)+150;
         
     }
     public void honk(){
