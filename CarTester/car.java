@@ -6,14 +6,18 @@ Unit 3: Modular Programming
 Activity 1: Creating Modules
 CarTester
 
+The purpose of this code is to create three different cars, each using a different constructor, 
+properties specified by the user.
 
 Variable dictionary:
-    nouns - stores the noun Strings into an array
-    verbs - stores the verbs strings into an array
-    rhymingNouns - stores the nouns that rhyme into an array
-    verb1, verb2, verb3 - the first, second, and third randomly chosen verbs for the poem
-    rhymingNoun1, rhymingNoun2, rhymingNoun3 - the first, second, and third randomly chosen rhyming nouns for the poem
-    randomNum - a random integer used for randomly picking nouns or verbs
+    make: String variable that stores the make of the car.
+    model: String variable that stores the model of the car.
+    colour: String variable that stores the color of the car.
+    year: Integer variable that stores the manufacturing year of the car.
+    price: Integer variable that stores the price of the car.
+    horsepower: Integer variable that stores the horsepower of the car.
+    output: a string that holds the details of the car that will be ouputted
+    imake, imodel, icolour, iyear, iprice, ihorsepower: the parameters of the corresponding variables
     
 */
 package CarTester;
@@ -51,10 +55,10 @@ public class car {
         horsepower = (int) (Math.random() *(270-150+1))+150;
         
     }
-    public void honk(){
+    public void honk(){ //constructor to honk the car
         System.out.println("HONK!");
     }
-    public String toString(){
+    public String toString(){ //constructor to output all of the properties
         String output = "Car details" + "\n";
         output += "Make: " + make + "\n";
         output += "Model: " + model + "\n";
