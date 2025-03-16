@@ -21,7 +21,7 @@ package CarTester;
 public class Car {
     //declare variables
     private String make, model, colour;
-    private Int year, price, horsepower;
+    private int year, price, horsepower;
     //consturctors
     public Car(){
         make = "Toyota";
@@ -31,17 +31,63 @@ public class Car {
         price = 0;
         horsepower = 0 ;
     }
-    public Car(String imake, String iToyota, String ){
-        make2 = make
-        model2 = model
-        colour2 = colour
-        year2 = year
-        price2 = price
-        horsepower2 = horsepower
+    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
+        make2 = imake
+        model2 = imodel
+        colour2 = icolour
+        year2 = iyear
+        price2 = iprice
+        horsepower2 = ihorsepower
+
+    }
+    //2nd constructor
+    public Car(){
+        make = "Toyota";
+        model = "Rav4";
+        colour = "Black";
+        year = 0;
+        price = 0;
+        horsepower = 0 ;
+    }
+    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
+        make2 = imake
+        model2 = imodel
+        colour2 = icolour
+        year2 = iyear
+        price2 = iprice
+        horsepower2 = ihorsepower
+
+    }
+    //3rd constructor
+    public Car(){
+        make = "Toyota";
+        model = "Rav4";
+        colour = "Black";
+        year = 0;
+        price = 0;
+        horsepower = 0 ;
+    }
+    public Car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
+        make3 = imake
+        model3 = imodel
+        colour3 = icolour
+        year3 = iyear
+        price3 = iprice
+        horsepower3 = ihorsepower
 
     }
     public void honk(){
         System.out.println("HONK!")
+    }
+    public String toString(){
+        String output = "First Car" + "\n";
+        output += "Make: " + make + "\n";
+        output += "Model: " + model + "\n";
+        output += "Colour: " + colour + "\n";
+        output += "Year: " + year + "\n";
+        output += "Price: " + price + "\n";
+        output += "Horsepower: " + horsepower + "\n";
+        return output;
     }
   }
 }
