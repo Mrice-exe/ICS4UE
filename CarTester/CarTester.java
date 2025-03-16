@@ -30,11 +30,11 @@ class CarTester {
     System.out.println("What is your desired colour?");
     String colour = myObj.nextLine();
     System.out.println("What is your desired year?");
-    int year = myObj.nextint();
+    int year = myObj.nextInt();
     System.out.println("What is your desired price?");
-    int price = myObj.nextint();
+    int price = myObj.nextInt();
     System.out.println("What is your desired horsepower?");
-    int horsepower = myObj.nextint();
+    int horsepower = myObj.nextInt();
     
     car car1 = new car();
     car car2 = new car(make, model, colour, year, price, horsepower);
