@@ -6,19 +6,17 @@ Unit 3: Modular Programming
 Activity 1: Creating Modules
 MyBankMachine
 
-The purpose of this code is to create three different cars, each using a different constructor, 
-properties specified by the user.
+The purpose of this code is to imitate an ATM that can deposite, withdraw, display balance, and calculate interest
 
 Variable dictionary:
-    make: String variable that stores the make of the car.
-    model: String variable that stores the model of the car.
-    colour: String variable that stores the color of the car.
-    year: Integer variable that stores the manufacturing year of the car.
-    price: Integer variable that stores the price of the car.
-    horsepower: Integer variable that stores the horsepower of the car.
-    output: a string that holds the details of the car that will be ouputted
-    imake, imodel, icolour, iyear, iprice, ihorsepower: the parameters of the corresponding variables
-    
+    bank: String variable that stores the name of the bank being used.
+    deposit: int variable that stores the amount being deposited into the account.
+    withdraw: int variable that stores the amount being withdrawn from the account.
+    balance: int variable that stores the current balance in the account.
+    interest: int variable that stores the interest rate (as a percentage) for the account.
+    periods: int variable that stores the number of compounding periods for the interest calculation.
+    total: double variable that holds the calculated total balance after applying the compound interest.
+    ibalance, ideposit, iwithdraw, ibank, interest, iperiods: parameters fro tehc orresponding variables.
 */
 package MyBankMachine;
 
@@ -26,7 +24,7 @@ public class ATM {
     //declare variables
     private String bank;
     private int deposit, withdraw, balance, interest, periods, total;
-    //default constructor
+    //constructor that calculates the balance after a deposite
     public int deposit(int ibalance, int ideposit, String ibank){
         balance = ibalance;
         deposit = ideposit;
@@ -39,7 +37,7 @@ public class ATM {
           System.out.println("Thank you for banking at " + bank);
         }
     }
-    //assigning variables constructor
+    //constructor that calculates the balance after withdrawing
     public int withdraw(int ibalance, int iwithdraw, String ibank){
         balance = ibalance;
         withdraw = iwithdraw;
@@ -53,7 +51,7 @@ public class ATM {
 
         }
     }
-    //Alternate constructor that only uses the make, model, and colour
+    //constructor that displays the balance
     public String display(int ibalance, String ibank){
         balance = ibalance;
         bank = ibank;
@@ -62,7 +60,7 @@ public class ATM {
         
         
     }
-
+    //constructor that calcualtes and displays the interest
     public int interest(int ibalance, int iinterest, int iperiods){ 
         balance = ibalance;  
         interest = iinterest; 
