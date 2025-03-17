@@ -37,20 +37,20 @@ class MyBankMachine {
       System.out.println("(5)exit");
       int response = myObj.nextInt();
       System.out.println("------------------------------------");
-      if response == 1{
+      if response == 1{//display balance
         ATM display = new display(balance,bank);
       }
-      else if response == 2{
+      else if response == 2{//deposit
         System.out.println("How much would you like to deposit?");
         int deposit = myObj.nextInt();
         ATM dep = new deposit(balance,deposit,bank);
       }
-      else if response == 3{
+      else if response == 3{//withdraw
         System.out.println("How much would you like to withdraw?");
         int withdraw = myObj.nextInt();
         ATM wit = new withdraw(balance,withdraw,bank);
       }
-      else if response == 4{
+      else if response == 4{//interest calculation
         System.out.println("What is the interest rate per compound period for your account? (please respond in integers i.e. '5')");
         int interest = myObj.nextInt();
         System.out.println("How many compound periods do you plan on having?");
@@ -58,7 +58,7 @@ class MyBankMachine {
 
         ATM interes = new interest(balance,interest,periods);
       }
-      else if response == 5{
+      else if response == 5{//exit
         i = 0
         System.out.println("It's been a pleasure at "+bank+" see you next time!")
       }
