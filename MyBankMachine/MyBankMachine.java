@@ -6,20 +6,12 @@ Unit 3: Modular Programming
 Activity 1: Creating Modules
 MyBankMachine
 
-The purpose of this code is to create three different cars, each using a different constructor, 
-properties specified by the user.
+The purpose of this code is to imitate an ATM that can deposite, withdraw, display balance, and calculate interest
 
 Variable dictionary:
-    make: String variable that stores the make of the car.
-    model: String variable that stores the model of the car.
-    colour: String variable that stores the color of the car.
-    year: Integer variable that stores the manufacturing year of the car.
-    price: Integer variable that stores the price of the car.
-    horsepower: Integer variable that stores the horsepower of the car.
-    myObj: Scanner object used to capture user input.
-    car1: Object of the Car class created using the default constructor.
-    car2: Object of the Car class created using the constructor that takes all six properties.
-    car3: Object of the Car class created using the constructor that takes only the make, model, and colour properties.
+    bank: the bank name that is being used
+    balance: the given balance of the user
+    response: the number reponse given by the user
     
 */
 package MyBankMachine;
