@@ -27,35 +27,35 @@ public class ATM {
     private String bank;
     private int deposit, withdraw, balance, interest, periods, total;
     //default constructor
-    public deposit(int ibalance, int deposit, String ibank){
+    public int deposit(int ibalance, int ideposit, String ibank){
         balance = ibalance;
         deposit = ideposit;
         bank = ibank;
-        if ideposit < 0{
+        if (ideposit < 0){
           System.out.println("invalid number, please try again");
         }else{
-          balance += deposit
+          balance += deposit;
           System.out.println("Your new balance is $" + balance);
           System.out.println("Thank you for banking at " + bank);
         }
     }
     //assigning variables constructor
-    public withdraw(int ibalance, int withdraw, String ibank){
+    public int withdraw(int ibalance, int iwithdraw, String ibank){
         balance = ibalance;
         withdraw = iwithdraw;
         bank = ibank;
-        if iwithdraw < 0{
+        if (iwithdraw < 0){
           System.out.println("invalid number, please try again");
         }else{
-          balance -= withdraw
-          System.outprintln("Your new balance is $" + balance);
+          balance -= withdraw;
+          System.out.println("Your new balance is $" + balance);
           System.out.println("Thank you for banking at " + bank);
 
         }
     }
     //Alternate constructor that only uses the make, model, and colour
-    public display(int ibalance, String ibank){
-        balance = ibalance
+    public String display(int ibalance, String ibank){
+        balance = ibalance;
         bank = ibank;
         System.out.println("Your current balance is $" + balance);
         System.out.println("Thank you for banking at " + bank);
@@ -66,7 +66,7 @@ public class ATM {
     public int interest(int ibalance, int iinterest, int iperiods){ 
         balance = ibalance;  
         interest = iinterest; 
-        periods = iperiods         
+        periods = iperiods;         
 
         // Calculate compound interest
         double total = balance * Math.pow(1 + interest, periods);
