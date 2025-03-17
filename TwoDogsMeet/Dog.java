@@ -10,62 +10,55 @@ The purpose of this code is to create three different cars, each using a differe
 properties specified by the user.
 
 Variable dictionary:
-    make: String variable that stores the make of the car.
-    model: String variable that stores the model of the car.
-    colour: String variable that stores the color of the car.
-    year: Integer variable that stores the manufacturing year of the car.
-    price: Integer variable that stores the price of the car.
-    horsepower: Integer variable that stores the horsepower of the car.
-    output: a string that holds the details of the car that will be ouputted
-    imake, imodel, icolour, iyear, iprice, ihorsepower: the parameters of the corresponding variables
-    
-*/
-package CarTester;
-
-public class car {
-    //declare variables
-    private String make, model, colour;
-    private int year, price, horsepower;
-    //default constructor
-    public car(){
-        make = "Toyota";
-        model = "Rav4";
-        colour = "Black";
-        year = 2020;
-        price = 40000;
-        horsepower = 200 ;
-    }
-    //assigning variables constructor
-    public car(String imake, String imodel, String icolour, int iyear, int iprice, int ihorsepower){
-        make = imake;
-        model = imodel;
-        colour = icolour;
-        year = iyear;
-        price = iprice;
-        horsepower = ihorsepower;
-    }
-    //Alternate constructor that only uses the make, model, and colour
-    public car(String imake, String imodel, String icolour){
-        make = imake;
-        model = imodel;
-        colour = icolour;
-        //set year, price, and horsepower to random numbers within a reasonable range
-        year = (int) (Math.random() *(2025-1980+1))+1980;
-        price = (int) (Math.random() *(80000-30000+1))+30000;
-        horsepower = (int) (Math.random() *(270-150+1))+150;
+    name: String variable that stores the name of the dog.
+    breed: String variable that stores the breed of the dog.
+    age: Integer variable that stores the age of the dog (randomly assigned between 1-10).
+    aggression: Integer variable that stores the aggression value of the dog (randomly assigned between 1-10).
+    hunger: Integer variable that stores the hunger value of the dog (randomly assigned between 1-10).
+    rand: Random object used to generate random values for age, aggression, and hunger.
+    interactionValue: Integer variable used to calculate the total value for determining the dog's interaction during the meeting.
         
+*/
+package TwoDogsMeet;
+
+public class Dog {
+    private String name, breed;
+    private int age, aggression, hunger;
+
+    // Constructor to initialize the dog's name and breed and assign random age, aggression, and hunger values
+    public Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
+        Random rand = new Random();
+        this.age = rand.nextInt(10) + 1; // Random age between 1 and 10
+        this.aggression = rand.nextInt(10) + 1; // Random aggression between 1 and 10
+        this.hunger = rand.nextInt(10) + 1; // Random hunger between 1 and 10
     }
-    public void honk(){ //constructor to honk the car
-        System.out.println("HONK!");
+
+    // Set the aggression value
+    public void setAggression(int aggression) {
+        this.aggression = aggression;
     }
-    public String toString(){ //constructor to output all of the properties
-        String output = "Car details" + "\n";
-        output += "Make: " + make + "\n";
-        output += "Model: " + model + "\n";
-        output += "Colour: " + colour + "\n";
-        output += "Year: " + year + "\n";
-        output += "Price: " + price + "\n";
-        output += "Horsepower: " + horsepower + "\n";
-        return output;
+
+    // Set the hunger value
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    // Method to output the dog details
+    public String toString() {
+        return "Name: " + name + "\nBreed: " + breed + "\nAge: " + age + "\nAggression: " + aggression + "\nHunger: " + hunger;
+    }
+
+    // Method to simulate a meeting between two dogs
+    public String meet(Dog other) {
+        int interactionValue = this.aggression + this.hunger + other.aggression + other.hunger;
+        if (interactionValue < 20) {
+            return "The dogs had a friendly meeting!";
+        } else if (interactionValue < 30) {
+            return "The dogs had a neutral meeting.";
+        } else {
+            return "The dogs had an aggressive meeting!";
+        }
     }
 }
