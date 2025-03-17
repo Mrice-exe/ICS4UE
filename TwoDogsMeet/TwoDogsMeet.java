@@ -10,60 +10,89 @@ The purpose of this code is to create three different cars, each using a differe
 properties specified by the user.
 
 Variable dictionary:
-    make: String variable that stores the make of the car.
-    model: String variable that stores the model of the car.
-    colour: String variable that stores the color of the car.
-    year: Integer variable that stores the manufacturing year of the car.
-    price: Integer variable that stores the price of the car.
-    horsepower: Integer variable that stores the horsepower of the car.
-    myObj: Scanner object used to capture user input.
-    car1: Object of the Car class created using the default constructor.
-    car2: Object of the Car class created using the constructor that takes all six properties.
-    car3: Object of the Car class created using the constructor that takes only the make, model, and colour properties.
+    scanner: Scanner object used to capture user input.
+    name1, name2: String variables to store the names of the first and second dogs.
+    breed1, breed2: String variables to store the breeds of the first and second dogs.
+    dog1, dog2: Dog objects representing the two dogs created.
+    changeAggression1, changeAggression2: Integer variables that store the user's choice to change the aggression values for the first and second dogs.
+    changeHunger1, changeHunger2: Integer variables that store the user's choice to change the hunger values for the first and second dogs.
+    newAggression1, newAggression2: Integer variables used to store the new aggression values for the first and second dogs.
+    newHunger1, newHunger2: Integer variables used to store the new hunger values for the first and second dogs.
+    meetingResult: String variable used to store the result of the dogs' meeting.
     
 */
-package CarTester;
+package TwoDogsMeet;
     
 import java.util.Scanner;  // Import the Scanner class
 
-class CarTester {
+public class TwoDogsMeet {
     public static void main(String[] args) {
-    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
 
-    // Ask the user for car properties and store the responses
-    System.out.println("Let's create your dream car");
-    System.out.println("What is your desired make?");
-    String make = myObj.nextLine();
-    System.out.println("What is your desired model?");
-    String model = myObj.nextLine();
-    System.out.println("What is your desired colour?");
-    String colour = myObj.nextLine();
-    System.out.println("What is your desired year?");
-    int year = myObj.nextInt();
-    System.out.println("What is your desired price?");
-    int price = myObj.nextInt();
-    System.out.println("What is your desired horsepower?");
-    int horsepower = myObj.nextInt();
-    
-    car car1 = new car(); //default car constructor
-    car car2 = new car(make, model, colour, year, price, horsepower); // Constructor with all properties
-    car car3 = new car(make, model, colour); // Constructor with make, model, and colour only
+        // Output message that two dogs will be created
+        System.out.println("Two dogs will be created!");
 
-    //Print the details of each car
-    System.out.println("Here is the default car:");
-    System.out.println(car1.toString());
-    System.out.println("--------------------------");
+        // Prompt user for the name and breed of the first dog
+        System.out.print("Enter the name of the first dog: ");
+        String name1 = scanner.nextLine();
+        System.out.print("Enter the breed of the first dog: ");
+        String breed1 = scanner.nextLine();
+        
+        // Prompt user for the name and breed of the second dog
+        System.out.print("Enter the name of the second dog: ");
+        String name2 = scanner.nextLine();
+        System.out.print("Enter the breed of the second dog: ");
+        String breed2 = scanner.nextLine();
 
-    System.out.println("Here is your dream car");
-    System.out.println(car2.toString());
-    System.out.println("--------------------------");
+        // Create two dog objects with random properties
+        Dog dog1 = new Dog(name1, breed1);
+        Dog dog2 = new Dog(name2, breed2);
 
-    System.out.println("Here is your alternate recommended car");
-    System.out.println(car3);
-    System.out.println("--------------------------");
+        // Output the information of each dog
+        System.out.println("\nHere is the first dog:");
+        System.out.println(dog1.toString());
+        System.out.println("\nHere is the second dog:");
+        System.out.println(dog2.toString());
 
-    //the car honks
-    System.out.println("Your dream car honks");
-    car1.honk();
-  }
+        // Ask the user if they want to change the aggression for the first dog
+        System.out.print("\nDo you want to change the aggression of " + name1 + "? (1 for yes, 0 for no): ");
+        int changeAggression1 = scanner.nextInt();
+        if (changeAggression1 == 1) {
+            System.out.print("Enter new aggression value for " + name1 + ": ");
+            int newAggression1 = scanner.nextInt();
+            dog1.setAggression(newAggression1);
+        }
+
+        // Ask the user if they want to change the hunger for the first dog
+        System.out.print("\nDo you want to change the hunger of " + name1 + "? (1 for yes, 0 for no): ");
+        int changeHunger1 = scanner.nextInt();
+        if (changeHunger1 == 1) {
+            System.out.print("Enter new hunger value for " + name1 + ": ");
+            int newHunger1 = scanner.nextInt();
+            dog1.setHunger(newHunger1);
+        }
+
+        // Ask the user if they want to change the aggression for the second dog
+        System.out.print("\nDo you want to change the aggression of " + name2 + "? (1 for yes, 0 for no): ");
+        int changeAggression2 = scanner.nextInt();
+        if (changeAggression2 == 1) {
+            System.out.print("Enter new aggression value for " + name2 + ": ");
+            int newAggression2 = scanner.nextInt();
+            dog2.setAggression(newAggression2);
+        }
+
+        // Ask the user if they want to change the hunger for the second dog
+        System.out.print("\nDo you want to change the hunger of " + name2 + "? (1 for yes, 0 for no): ");
+        int changeHunger2 = scanner.nextInt();
+        if (changeHunger2 == 1) {
+            System.out.print("Enter new hunger value for " + name2 + ": ");
+            int newHunger2 = scanner.nextInt();
+            dog2.setHunger(newHunger2);
+        }
+
+        // Simulate the meeting between the two dogs and output the result
+        System.out.println("\nNow the dogs will meet...");
+        String meetingResult = dog1.meet(dog2);
+        System.out.println(meetingResult);
+    }
 }
