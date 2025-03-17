@@ -1,3 +1,20 @@
+/*
+Sean S
+03/16/2025
+ICS4UE 
+Unit 3: Modular Programming
+Activity 2: Modifying Modules
+ComboLockDriver
+
+The purpose of this code is to imitate cracking open a combination for a lock
+
+Variable dictionary:
+    combination: An integer array that stores the correct combination for the lock (3 numbers).
+    userCombination: An integer array that stores the user's input to attempt unlocking the lock.
+    num1, num2, num3: Integer variables that store the user's input for the three combination numbers when setting the combination.
+    attempts: Integer variable that tracks the number of attempts the user has made to guess the combination.
+    i: Index variable used in various loops to iterate through combination values.
+*/
 import java.util.Scanner;
 import java.util.Random;
 
