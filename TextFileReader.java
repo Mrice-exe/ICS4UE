@@ -7,27 +7,40 @@ Activity 3: External File Handling
 TextFileReader
 
 Variable dictionary:
-    num - stores the int input of user
-    squaroot - double, the calculated square root of the number
-    square - double, the square of the square root
-    error - double, the round off error
+    filename - String variable that stores the file path entered by the user.
+    myObj - Scanner object used to take user input from the console.
+    readFile - BufferedReader object used to read the file line by line.
+    line - String variable that temporarily stores each line of text read from the file.
+    fnf - FileNotFoundException object that handles cases where the file is not found.
+    io - IOException object that handles errors while reading the file.
 
 */
 import java.util.Scanner;  // Import the Scanner class
+import java.io.*; //import the io class
 
 
 class TextFileReader {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        System.out.println("Rounding Error calculator");
+        System.out.println("Txt File Reader"); 
         System.out.println("---------------------------------");
-        System.out.println("Please enter a number: ");
-        int num = myObj.nextInt();  
-        double squaroot = Math.sqrt(num); //the square root of the number
-        double square = Math.pow(squaroot,2); //the square of the square root
-        double error = num - square; //the round of error calculated from difference
-
-        System.out.println("The round of error is: " + error);
+        System.out.println("Please enter the file path: ");
+        String filename = myObj.nextLine();  
+        try{
+            //open file with the filename/path and attach a Buferred Reader
+            BufferedReader readFile = new BufferedReader(
+                new FileReader(filename));
+            String line;
+            //print out the entire contetns of the file line by line until there are no more lines left.
+            while ((line = readFile.readLine()) != null){ 
+                System.out.println(line);
+            }
+            readFile.close(); 
+        } catch (FileNotFoundException fnf) {
+            System.out.println("Error: File not found. Please check the file path. " + fnf);
+        } catch (IOException io) {
+            System.out.println("Error reading the file. " + io);
+        }
 
     }
 }
