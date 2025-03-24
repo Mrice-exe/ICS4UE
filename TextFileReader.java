@@ -8,7 +8,7 @@ TextFileReader
 
 Variable dictionary:
     filename - String variable that stores the file path entered by the user.
-    myObj - Scanner object used to take user input from the console.
+    myObj - Scanner object used to take user input.
     readFile - BufferedReader object used to read the file line by line.
     line - String variable that temporarily stores each line of text read from the file.
     fnf - FileNotFoundException object that handles cases where the file is not found.
