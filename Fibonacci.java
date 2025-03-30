@@ -26,6 +26,10 @@ class Fibonacci {
 
     }
     public static int fib(int n) {
+    /* This function calculates the nth fibonacci number using recursion
+    arguments: int n
+    return: int, the nth fibonacci number
+    */
       if (n < 2){
         return n; //if n is 1 or 0 then return n
       }
