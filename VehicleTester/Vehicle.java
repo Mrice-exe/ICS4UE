@@ -5,6 +5,13 @@ public class Vehicle {
     public double fuelTankSize;
     public double fuelAvailable;
     public double kilometresTravelled;
+    public int passengerAmmount;
+    public double passengerFare;
+    public double fuelCost;
+    public double revenue;
+    public double cost;
+
+
   
     public Vehicle() {
       //Default Constructor
@@ -12,13 +19,19 @@ public class Vehicle {
       fuelTankSize = 0;
       fuelAvailable = 0;
       kilometresTravelled = 0;
+      passengerAmmount = 0;
+      passengerFare = 0;
+      fuelCost = 0;
     }
   
-    public Vehicle(double gK, double fTS, double fA, double kT){
+    public Vehicle(double gK, double fTS, double fA, double kT, int pA, double pF, double fC){
       gasKilometrage = gK;
       fuelTankSize = fTS;
       fuelAvailable = fA;
       kilometresTravelled = kT;
+      passengerAmmount = pA;
+      passengerFare = pF;
+      fuelCost = fC;
     }
   
     public void addFuel(double gas){
@@ -56,12 +69,37 @@ public class Vehicle {
           " before running out of gas.");
       }
     }
+
+    public void revenueCalculation(){
+        //calculate passengeramount multiplied by the fare to get the revenue
+        revenue = passengerAmmount * passengerFare;
+        System.out.println("Revenue = "+revenue);
+    }
+    public void costCalculation(){
+        //To calculate the cost, it would be kilometers travelled times divided by 100 times kilometrage
+        //then multiply by the cost of gas
+        //ex. if kilometrage is 10L/100km and kms travelled is 1000km, and cost of gas is $1 per liter,
+        //1000/100 = 10, 10*10 = 100, 100 * 1 = 100 dollars cost in total.
+        cost = kilometresTravelled/100;
+        cost = cost * gasKilometrage;
+        cost = cost *fuelCost;
+        System.out.println("Cost = "+cost);
+
+    }
+    public void profitCalculation(){
+        //calculate the total profits by performing revenue minus cost
+        double profit = revenue - cost;
+        System.out.println("Profit = "+profit);
+    }
   
     public String toString() {
       String output = "Gas Kilometrage = " + gasKilometrage+"\n";
       output += "Fuel Tank Size = " + fuelTankSize + "\n";
       output += "Fuel Available = " + fuelAvailable + "\n";
       output += "Kilometres Driven = "+kilometresTravelled+"\n";
+      output += "Passengers = "+passengerAmmount+"\n";
+      output += "Fare = "+passengerFare+"\n";
+      output += "Fuel Cost = "+fuelCost+"\n";
       return output;
     }
   }
