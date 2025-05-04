@@ -1,3 +1,23 @@
+/*
+Sean S
+05/04/2025
+ICS4UE 
+Unit 6: Introduction to Object-Oriented Programming
+Activity 1: Object-Oriented Programming and Classes
+Vehicle
+
+Variable dictionary:
+    gasKilometrage – double: Litres of fuel consumed per 100 km driven.
+    fuelTankSize – double: Maximum fuel capacity of the vehicle in litres.
+    fuelAvailable – double: Current amount of fuel in the tank.
+    kilometresTravelled – double: Total distance the vehicle has travelled.
+    passengerAmmount – int: Number of passengers being transported.
+    passengerFare – double: Fare paid by each passenger.
+    fuelCost – double: Cost of fuel per litre.
+    revenue – double: Total revenue earned from all passengers.
+    cost – double: Total cost of fuel used for the distance travelled.
+    profit – double: The difference between revenue and cost (calculated locally in profitCalculation).
+*/
 package VehicleTester;
 
 public class Vehicle {
