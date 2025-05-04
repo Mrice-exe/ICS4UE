@@ -1,3 +1,17 @@
+/*
+Sean S
+05/04/2025
+ICS4UE 
+Unit 6: Introduction to Object-Oriented Programming
+Activity 1: Object-Oriented Programming and Classes
+VehicleTester
+
+Variable dictionary:
+  scanner – Scanner: Reads user input from the console.
+  p – int:  used in the loop to ensure valid input is received.
+  gasPrice – double: The price of gas per litre entered by the user.
+  car1 – Vehicle: Instance of the Vehicle class used to simulate and test vehicle operations.
+*/
 package VehicleTester;
 import java.util.Scanner;
 
